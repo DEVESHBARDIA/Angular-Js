@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular js</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<style>
+    .hello{
+        width: 100%;
+        object-fit: contain;
+    }
+    p{
+        background-color: aquamarine;
+        border-radius: 10px;
+        text-align: center;
+        color: red;
+        font-size: 50px;
+        font-weight: 700;
+    }
+</style>
+
+<body ng-app="myapp1">
+    <div ng-controller="disp" class="hello">
+        <p>Welcome to {{ text }}</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

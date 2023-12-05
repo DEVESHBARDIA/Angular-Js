@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display full name</title>
+    <script src="min.js"></script>
+</head>
+<body ng-app="fullname">
+    <div ng-controller="fname">
+        <h1>Angular js : Display Full Name</h1>
+        <label>First name: 
+            <input type="text" ng-model="firstname">
+        </label>
+        <label>Last name: 
+            <input type="text" ng-model="lastname">
+        </label>
+        <h3>Your fullname is: {{ firstname }} {{ lastname }}</h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+    <head>
+        <script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <title>Shopping items</title>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="list">
+        <h1>Shopping Application</h1>
+        <h2>Created by Pranav at 04/11/2023</h2>
+        <h3>list of shopping items</h3>
+        <ol>
+            <li>Brinjal</li>
+            <li>Carrot</li>
+        </ol>
+        Enter an item to add:<input type="text" id="p1"><button onclick="a1()">Add items</button><br>
+        Select an item to remove:<select></select><button>Remove items</button>
+        </div>
+
+    </body>
+    </html>
+    <script>
+        var h=angular.module("myapp",[])
+        h.controller("list",function($scope){
+            function a1()
+            {
+                var a=document.getElementById("p1").value
+                if(a==""){
+                    alert("eneter an item");
+                }
+            }
+            
+           
+        });
+    </script> -->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <script src="min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .hello{
+        width: 100%;
+        object-fit: contain;
+        background-color: aquamarine;
+        border-radius: 10px;
+        color: red;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+    }
+    li{
+        color: blueviolet;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    label{
+        color: cadetblue;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    input{
+        padding: 10px;
+        border-radius: 10px;
+        width: 40%;
+        color: darkcyan;
+        font-size: 20px;
+        font-style: italic;
+        border-color: gray;
+        border-left: transparent;
+        border-top: transparent;
+        border-right: transparent;
+    }
+    select{
+        padding: 10px;
+        border-radius: 10px;
+        width: 40%;
+        color: darkcyan;
+        font-size: 20px;
+        font-style: italic;
+        border-color: gray;
+        border-left: transparent;
+        border-top: transparent;
+        border-right: transparent;
+    }
+    button{
+        display: inline-block;
+        padding: 5px 15px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #04AA6D;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+    button:hover {
+        background-color: #3e8e41
+    }
+    button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(5px);
+    }
+</style>
+<body ng-app="shopping">
+    <div ng-controller="cart" >
+        <h1 class="hello">Shopping cart</h1>
+        <ul>
+            <li ng-repeat="eatable in items">{{ eatable }}</li>
+        </ul>
+        <label>Enter the item to be added <br>
+            <input type="text" id="ip" ng-model="additem"/>
+            <button ng-click="add()"><i class="fa fa-shopping-cart"></i></button><br>
+        </label><br>
+        <label>Select the item to be removed <br>
+            <select ng-model="removeitem" id="rm" ng-options="item for item in items">{{ item }}</select>
+            <button ng-click="remove()">Remove Item</button>
+        </label>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

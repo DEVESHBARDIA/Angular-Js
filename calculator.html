@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="min.js"></script>
+</head>
+<style>
+    .hello{
+        width: 100%;
+        object-fit: contain;
+        background-color: aquamarine;
+        border-radius: 10px;
+        color: red;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .calc{
+        display: grid;
+        grid-gap: 60px;
+        grid-template-columns: repeat(4,40px);
+        margin-left: 40%;
+        
+    }
+    button{
+        padding: 35px;
+        font-size: 20px;
+        width: 100%;
+        border-radius: 45px;
+        border-color: transparent;
+        margin-top: 15px;
+        
+    }
+    button:hover{
+        background-color: aqua;
+    }
+    input{
+        padding: 10px;
+        border-radius: 10px;
+        width: 20%;
+        color: darkcyan;
+        font-size: 20px;
+        font-style: italic;
+        border-color: gray;
+        border-left: transparent;
+        border-top: transparent;
+        border-right: transparent;
+    }
+    input:last-child:hover{
+        background-color: red;
+    }
+</style>
+<body ng-app="calculator">
+    <div ng-controller="cal">
+        <center>
+        <h1 class="hello">CALCULATOR</h1>
+        <input type="text" ng-model="display" disabled/>
+        <div class="calc">
+            <button ng-repeat="digit in [1,2,3,'+']" ng-click="appendnumber(digit)">{{ digit }}</button>
+            <button ng-repeat="digit in [4,5,6,'-']" ng-click="appendnumber(digit)">{{ digit }}</button>
+            <button ng-repeat="digit in [7,8,9,'*']" ng-click="appendnumber(digit)">{{ digit }}</button>
+            <button ng-repeat="digit in [0,'C','/','=']" ng-click="handleaction(digit)">{{ digit }}</button>
+        </div>
+    </center>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="calc">
+            <input type="text" ng-model="display"/>
+            <button ng-click="appendnumber(8)">8</button>
+            <button ng-click="appendnumber(7)">7</button>
+            <button ng-click="appendnumber(9)">9</button>
+            <button ng-click="setoperator('+')">+</button>
+            <button ng-click="appendnumber(4)">4</button>
+            <button ng-click="appendnumber(5)">5</button>
+            <button ng-click="appendnumber(6)">6</button>
+            <button ng-click="setoperator('-')">-</button>
+            <button ng-click="appendnumber(1)">1</button>
+            <button ng-click="appendnumber(2)">2</button>
+            <button ng-click="appendnumber(3)">3</button>
+            <button ng-click="setoperator('*')">*</button>
+            <button ng-click="appendnumber(0)">0</button>
+            <button ng-click="appendnumber(.)">.</button>
+            <button ng-click="setoperator('/')">/</button>
+            <button ng-click="calculate()">=</button>
+            <button ng-click="clear()">C</button>
+        </div> -->

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial and Square</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<style>
+    .hello{
+        width: 100%;
+        object-fit: contain;
+        background-color: aquamarine;
+        border-radius: 10px;
+        color: red;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+    }
+    .records{
+        width: 100%;
+        object-fit: contain;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+    }
+    p{
+        background-color: aquamarine;
+        border-radius: 10px;
+        text-align: center;
+        color: red;
+        font-size: 50px;
+        font-weight: 700;
+    }
+    input{
+        padding: 10px;
+        border-radius: 10px;
+        width: 20%;
+        color: darkcyan;
+        font-size: 20px;
+        font-style: italic;
+        border-color: gray;
+        border-left: transparent;
+        border-top: transparent;
+        border-right: transparent;
+    }
+    textarea{
+        padding: 10px;
+        border-radius: 10px;
+        width: 20%;
+        color: darkcyan;
+        font-size: 20px;
+        font-style: italic;
+        border-color: gray;
+        border-left: transparent;
+        border-top: transparent;
+        border-right: transparent;
+    }
+    button{
+        display: inline-block;
+        padding: 5px 15px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #04AA6D;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    button:hover {
+        background-color: #3e8e41
+    }
+    button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(5px);
+    }
+    label{
+        color: cadetblue;
+        font-size: 30px;
+        font-weight: 700;
+    }
+</style>
+
+<body ng-app="usn">
+    <div ng-controller="usncount" >
+        <h1 class="hello">Records According to USN</h1>
+        <Label>Enter the Number of students: </Label>
+        <input type="text" ng-model="snum" id="snum"/>
+        <button ng-click="display_records()">Generate Records</button><br><br>
+        <Label>Generated Records are : </Label>
+        <div ng-repeat="student in students" class="records">
+            <h4>Student {{ $index + 1 }}</h4>
+            <p>Name : {{ student.name }}</p>
+            <p>CGPA : {{ student.cgpa }}</p>
+            <hr>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

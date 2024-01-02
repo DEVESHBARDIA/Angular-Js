@@ -91,3 +91,59 @@ a.controller("cal", function($scope){
         }
     }
 })
+
+//Factorial & Square
+
+var a = angular.module("factnsq", []);
+a.controller("factnsqctrl", function($scope){
+    $scope.num = "";
+    $scope.result = "";
+    $scope.factorial = function(){
+        if($scope.num == "")
+        {
+            alert("Please enter a number!")
+            document.getElementById("ip").focus();
+            return false;
+        }
+        else if($scope.num == 0)
+        {
+            $scope.result = 1
+        }
+        else if($scope.num < 0 || $scope.num.includes(".")){
+            $scope.result = $scope.num + "! is undefined";
+        }
+        else{
+            $scope.fact = 1;
+            for(var i=$scope.num; i>=1;i--)
+                $scope.fact = $scope.fact * i;
+                $scope.result = $scope.fact;
+        }
+    }
+
+    $scope.square = function(){
+        if($scope.num == "")
+        {
+            alert("Please enter a number!")
+            document.getElementById("ip").focus();
+            return false;
+        }
+        $scope.result = $scope.num * $scope.num;
+    }
+})
+
+
+//Generating records according to Entered value
+
+var a = angular.module("usn", []);
+a.controller("usncount", function($scope){
+    $scope.display_records = function(){
+        $scope.students = [];
+        for(var i=0;i<$scope.snum;i++)
+        {
+            $scope.students.push({
+                name : 'Student ' + (i+1),
+                cgpa : (Math.random() * 10).toFixed(2)
+            })
+        }
+    }
+})

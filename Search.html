@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="employeeApp">
+
+<head>
+    <title>Employee Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="employeeController">
+    <h2>Employee Search</h2>
+
+    <div class="search-container">
+        <label for="search">Search by Name:</label>
+        <input type="text" ng-model="searchText">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employees | filter: searchText">
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.position }}</td>
+                <td>{{ employee.salary }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var app = angular.module('employeeApp', []);
+
+        app.controller('employeeController', function ($scope) {
+            $scope.employees = [
+                { name: 'Ram', position: 'Software Engineer', salary: 80000 },
+                { name: 'Sam', position: 'Project Manager', salary: 100000 },
+                { name: 'Hari', position: 'UX Designer', salary: 90000 },
+                { name: 'Gita', position: 'Data Analyst', salary: 75000 },
+                { name: 'Sarita', position: 'QA Tester', salary: 70000 }
+            ];
+        });
+    </script>
+</body>
+
+</html>
